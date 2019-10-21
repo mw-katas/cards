@@ -1,0 +1,1 @@
+# Functionality specific to Makao (Polish variant, hence the 'k')
