@@ -3,9 +3,9 @@ def get_faces():
     Returns all standard playing card faces, starting at 2:
 
     >>> get_faces()
-    [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A']
+    ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
     """
-    return list(range(2,11)) + ['J', 'Q', 'K', 'A']
+    return [str(x) for x in range(2,11)] + ['J', 'Q', 'K', 'A']
 
 def get_deck():
     """
