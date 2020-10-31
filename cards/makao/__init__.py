@@ -1,11 +1,12 @@
 import sys
 
-sys.path.append('../../')
+sys.path.append("../../")
 from cards.common import (
     get_face,
     get_faces,
     get_suit,
 )
+
 
 def is_fighting(card: str):
     """
@@ -25,10 +26,11 @@ def is_fighting(card: str):
     if face in (str(x) for x in range(5, 11)):
         return False
 
-    if face == 'K' and get_suit(card) in ('♦', '♣'):
+    if face == "K" and get_suit(card) in ("♦", "♣"):
         return False
-    
+
     return True
+
 
 def is_stairs(left: str, right: str):
     """
@@ -44,14 +46,14 @@ def is_stairs(left: str, right: str):
     left_face, right_face = (get_face(x) for x in (left, right))
     if left_face == right_face:
         return True
-    
+
     left_suit, right_suit = (get_suit(x) for x in (left, right))
     if left_suit != right_suit:
         return False
 
-    if all(x in ('2', 'A') for x in (left_face, right_face)):
+    if all(x in ("2", "A") for x in (left_face, right_face)):
         return True
-        
+
     faces = get_faces()
     face_count = len(faces)
 
