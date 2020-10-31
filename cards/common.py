@@ -1,6 +1,7 @@
 import random
 from typing import Callable, Iterable
 
+
 def get_faces():
     """
     Returns all standard playing card faces, starting at 2:
@@ -8,7 +9,8 @@ def get_faces():
     >>> get_faces()
     ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
     """
-    return [str(x) for x in range(2,11)] + ['J', 'Q', 'K', 'A']
+    return [str(x) for x in range(2, 11)] + ["J", "Q", "K", "A"]
+
 
 def get_deck():
     """
@@ -21,15 +23,14 @@ def get_deck():
     52
     """
     return [
-        f'{number}{suit}'
-        for number in get_faces()
-        for suit in ('♠', '♥', '♦', '♣')
+        f"{number}{suit}" for number in get_faces() for suit in ("♠", "♥", "♦", "♣")
     ]
+
 
 def shuffle(deck: Iterable[str]):
     """
     Default shuffling implementation.
-    
+
     Uses random.shuffle, except does not mutate the deck in-place (whose idea was it anyway??)
 
     >>> deck = get_deck()
@@ -53,6 +54,7 @@ def start_deck(shuffle: Callable = shuffle):
     """
     return shuffle(get_deck())
 
+
 def get_suit(card: str):
     """
     Returns a suit of a given card:
@@ -64,6 +66,7 @@ def get_suit(card: str):
     '♣'
     """
     return card[-1]
+
 
 def get_face(card: str):
     """
