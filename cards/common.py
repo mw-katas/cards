@@ -29,10 +29,20 @@ def get_suit(card: str):
 
     >>> get_suit('A♣')
     '♣'
+
     >>> get_suit('10♣')
     '♣'
     """
     return card[-1]
 
 def get_face(card: str):
+    """
+    Returns the face of a given card:
+
+    >>> get_face('A♣')
+    'A'
+
+    >>> get_face('10♥')
+    '10'
+    """
     return card[:-1]
